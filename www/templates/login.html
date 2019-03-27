@@ -1,0 +1,18 @@
+<ion-view id="login-page" class="home-view" hide-nav-bar="true" view-title="Login" name="login-view" cache-view="false">
+    <ion-content class="padding">
+        <div class="row row-center">
+            <div class="col col-center text-center">
+                <h1 class="color-white">ABSEN</h1>
+                <div class="person login no-img"></div>
+                <form class="login-username" ng-submit="login(username)" name="login-form">
+                    <div class="input-username">
+                        <i class="glyphicon icon ion-person"></i>
+                        <input type="text" placeholder="username" name="username" ng-model="username"
+                               required>
+                    </div>
+                    <a href="#/login-password/{{username}}" class="button button-positive next-button color-white" ng-disabled="!username">Next</a>
+                </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

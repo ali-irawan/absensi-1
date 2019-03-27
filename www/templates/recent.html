@@ -1,0 +1,18 @@
+<ion-content class="padding" on-scroll="gotScrolled()" delegate-handle="top-content" ng-show="readyPage">
+  <div class="list">
+
+    <a class="item item-thumbnail-left group-recent" ng-repeat="recent in recentActivityList">
+      <div class="calender">
+        <label>{{recent.activity_month}}</label>
+        <p>{{recent.activity_date}}</p>
+        <span>{{recent.activity_day}}</span>
+      </div>
+      <h2><lable class="icon ion-android-alarm-clock"></label> {{recent.activity_hours}}</h2>
+      <p>{{recent.message}}</p>
+    </a>
+
+  </div>
+</ion-content>
+<button class="back-to-top {{actButton}} has-tab" ng-click="scrollSmallToTop()">
+  <label class="icon ion-chevron-up"></label>
+</button>

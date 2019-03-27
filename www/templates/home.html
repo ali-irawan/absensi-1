@@ -1,0 +1,27 @@
+<ion-content class="padding" ng-show="readyPage">
+  <div class="group-statistic">
+    <div class="group-diagram">
+      <canvas id="bar" class="chart chart-bar"
+              chart-data="data" chart-labels="labels" chart-series="series">
+      </canvas>
+    </div>
+    <div class="group-summary">
+      <div class="summary">
+        <div class="wk-hours">
+          <p>{{workDay>0?'>24':("0" + workHour).slice(-2)}}<span class="{{statusabsen=='I'? 'blink':''}}">:</span>{{workDay>0?'00':("0" + workMinute).slice(-2)}}<label></label></p>
+          <label>Working hour</label>
+        </div>
+        <div class="late-ck">
+          <p>{{lastCheckIn}}<label></label></p>
+          <label>Last check in</label>
+        </div>
+        <div class="best-ck">
+          <p>{{bestCheckIn}} <label></label></p>
+          <label>Best check in</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="check in shadow" ng-click="doScan()" ng-show="statusabsen != 'I'">Check in</button>
+  <button class="check out shadow" ng-click="doScanCheckout()" ng-show="statusabsen === 'I'">Check out</button>
+</ion-content>

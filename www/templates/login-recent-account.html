@@ -1,0 +1,20 @@
+<ion-view id="login-page" class="home-view recent-acount" hide-nav-bar="true" view-title="Login" name="login-view" cache-view="false">
+    <div class="bar bar-header bar-positive">
+        <h1 class="title">ABSEN</h1>
+    </div>
+    <ion-content class="padding">
+        <div class="recent-account list">
+            <div class="group-item" ng-repeat="user in userLists">
+                <a class="item" href="#/login-password/{{user.username}}">
+                    <div class="person recent {{!user.profilePicture?'no-img':''}}" style="{{user.profilePicture?'background: url('+user.profilePicture+')':''}}"></div>
+                    <label>{{user.fullName}}</label>
+                </a>
+                <div class="remove-recent-account ion-close-circled" ng-click="removeAccount(user.username)"></div>
+            </div>
+            <a class="add-different-account" ng-click="addNewAccount()">
+                <i class="ion-plus-circled"></i> Login with different account
+            </a>
+
+        </div>
+    </ion-content>
+</ion-view>
